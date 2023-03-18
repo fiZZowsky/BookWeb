@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\BookWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\css\\bootswatchTheme.css",
+      "PackagePath": "staticwebassets\\css\\bootswatchTheme.css"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
