@@ -1,0 +1,90 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="primary">
+    <div>
+        <p class="header22">START FOR FREE</p>
+        <p class="header30">CREATE NEW ACCOUNT<span class="header50">.</span></p>
+        <p class="header20">Alerady a member? Log in</p>
+    </div>
+
+    <form>
+        <div class="form">
+            <input type="text" class="form-control" id="signup-form" placeholder="First name">
+            <input type="text" class="form-control" id="signup-form" style="margin-left: 1rem; margin-right: 1rem" placeholder="Last name">
+        </div>
+        <div class="login-types">
+            <input type="email" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="login-types">
+            <input type="password" class="form-control" placeholder="Password"/>
+        </div>
+    </form>
+    <div class="button">
+        <button type="submit" class="btn btn-primary mb-2">Register</button>
+    </div>
+</div>
+
+<style>
+    .primary {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .primary * {
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+    .header20 {
+        font-size: 20px;
+        color: grey;
+    }
+
+    .header22 {
+        font-size: 15px;
+        font-weight: 900;
+        color: grey;
+    }
+
+    .header30 {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .header50 {
+        font-size: 50px;
+        color: fuchsia;
+    }
+
+    #signup-form {
+        width: fit-content;
+    }
+
+    .form {
+        display: flex;
+        width:50%;
+        flex-direction: row;
+        margin-bottom: 1rem;
+    }
+
+        .form * {
+            margin-right: 1rem;
+        }
+
+    .login-types{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 40%;
+    }
+
+    .button{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 4rem;
+    }
+</style>
