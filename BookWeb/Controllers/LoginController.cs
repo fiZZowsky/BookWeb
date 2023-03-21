@@ -18,5 +18,9 @@ namespace BookWeb.Controllers
             IEnumerable<User> objUsersList = _db.users;
             return View(objUsersList);
         }
+        public IActionResult RegisterIndex() {
+			IEnumerable<User> objUsersList = _db.users;
+			return View(objUsersList);
+		}
     }
 }

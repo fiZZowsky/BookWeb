@@ -59,7 +59,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted bg-light">
+    <footer class="border-top footer text-muted bg-light" id="footer">
         <div class="container">
             &copy; 2023 - BookWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
@@ -70,3 +70,11 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<style>
+    #footer *{
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+    }
+</style>
