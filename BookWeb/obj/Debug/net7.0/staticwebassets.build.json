@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uixHmISI9/+3TuPAgOonbi/dct7WNkq2Qo25QmLZKc8=",
+  "Hash": "h8vq/zT6e2qwOln8rvWfOkZR8wUrN4uj8RqgvXBsbDw=",
   "Source": "BookWeb",
   "BasePath": "_content/BookWeb",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Assets\\Books.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Assets\\hand-main.png",
+      "SourceId": "BookWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\",
+      "BasePath": "_content/BookWeb",
+      "RelativePath": "Assets/hand-main.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Assets\\hand-main.png"
     },
     {
       "Identity": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\css\\bootswatchTheme.css",

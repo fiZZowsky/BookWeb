@@ -2,6 +2,7 @@
 @{
 	ViewData["Title"] = "Index";
 }
+
 <div class="primary">
 	<div class="left-site">
 		<div>
@@ -24,7 +25,7 @@
 			</form>
 		</div>
 		<p class="text15">Don't have an account?</p>
-		@Html.ActionLink("Sign up", "RegisterIndex")
+		<a asp-controller="Login" asp-action="CreateUser">Sign up</a>
 	</div>
 	<div class="right-site" id="gradient">
 		<div class="rightbox-text">

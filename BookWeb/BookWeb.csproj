@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\Assets\Books.jpg" />
+    <None Include="wwwroot\Assets\hand-main.png" />
   </ItemGroup>
 
   <ItemGroup>

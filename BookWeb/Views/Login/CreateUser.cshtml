@@ -1,29 +1,33 @@
-﻿@model IEnumerable<User>
-@{
-	ViewData["Title"] = "RegisterIndex";
-}
+﻿@model User
+
+
+
 <div class="primary">
 	<div class="left-site">
 		<div>
 			<p class="text30">Hey, hello 👋</p>
 		</div>
 		<div>
-			<form class="login-form">
+			<form method="post" class="login-form">
 				<div class="content-in-row">
 					<div style="margin-right:0.5rem">
-						<p class="text15">First name</p>
-						<input type="text" class="form-control">
+						<label asp-for="Name" class="text15">First name</label>
+						<input asp-for="Name"class="form-control">
 					</div>
 					<div style="margin-left:0.5rem">
-						<p class="text15">Last name</p>
-						<input type="text" class="form-control">
+						<label asp-for="Surname" class="text15">Last name</label>
+						<input asp-for="Surname"class="form-control">
 					</div>
 				</div>
-				<p class="text15">Email</p>
-				<input type="email" class="form-control">
-				<p class="text15">Password</p>
-				<input type="password" class="form-control">
-				<div style="">
+				<div>
+					<label asp-for="Email" class="text15">Email</label>
+					<input asp-for="Email" class="form-control">
+				</div>
+				<div>
+					<label asp-for="Password" class="text15">Password</label>
+					<input asp-for="Password" class="form-control">
+				</div>
+				<div class="button">
 					<button type="submit" class="btn btn-primary button">Register</button>
 				</div>
 			</form>
@@ -105,7 +109,7 @@
 		margin-bottom: 0.5rem;
 	}
 
-	.content-in-row{
+	.content-in-row {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;

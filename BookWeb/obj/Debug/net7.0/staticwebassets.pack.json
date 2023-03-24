@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Assets\\Books.jpg"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Assets\\hand-main.png",
+      "PackagePath": "staticwebassets\\Assets\\hand-main.png"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\css\\bootswatchTheme.css",
       "PackagePath": "staticwebassets\\css\\bootswatchTheme.css"
     },

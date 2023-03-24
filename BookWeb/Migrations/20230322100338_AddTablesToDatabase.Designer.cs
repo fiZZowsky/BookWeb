@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230318132148_AddCategoriesToDatabase")]
-    partial class AddCategoriesToDatabase
+    [Migration("20230322100338_AddTablesToDatabase")]
+    partial class AddTablesToDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -148,7 +148,7 @@ namespace BookWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
