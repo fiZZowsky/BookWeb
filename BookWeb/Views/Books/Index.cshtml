@@ -1,0 +1,11 @@
+﻿@model Tuple<IEnumerable<Category>, IEnumerable<Book>>
+
+<div class="d-flex flex-row w-100 h-100 m-3 p-3 justify-content-between">
+    <div class="d-flex flex-column me-5 pe-5">
+        <partial name="_CategoriesPartial" , model="Model.Item1" />
+    </div>
+    <div class="d-flex flex-column">
+        <partial name="_BooksByCategoryPartial", model="Model.Item2" />
+    </div>
+</div>
+

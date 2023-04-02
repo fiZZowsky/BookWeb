@@ -5,16 +5,8 @@
       "PackagePath": "staticwebassets\\BookWeb.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Assets\\Books.jpg",
-      "PackagePath": "staticwebassets\\Assets\\Books.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Assets\\hand-main.png",
-      "PackagePath": "staticwebassets\\Assets\\hand-main.png"
-    },
-    {
-      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\css\\bootswatchTheme.css",
-      "PackagePath": "staticwebassets\\css\\bootswatchTheme.css"
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\hand-main.png",
+      "PackagePath": "staticwebassets\\Resources\\hand-main.png"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\css\\site.css",

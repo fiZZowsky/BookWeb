@@ -2,34 +2,40 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="primary">
-    <div class="main-photo">
-        <div>
-            <p class="text-50">Find the book you're looking for easier to read.</p>
+<div class="d-flex flex-wrap justify-content-center">
+    <div class="d-flex flex-row vh-100">
+        <div class="input-group align-items-center justify-content-center text-md-left flex-column" style="padding: 50px; flex-basis: 50%;">
+            <h1 style="font-weight:900" id="main-text">Find the book you're looking for easier to read.</h1>
         </div>
-        <div class="main-photo">
-            <img src="~/Assets/hand-main.png" />
+        <div class="d-flex flex-wrap justify-content-center">
+            <img src="@Url.Content("~/Resources/hand-main.png")" />
         </div>
     </div>
 </div>
 
 <style>
-    .primary{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-image: linear-gradient(#fcfcfe, #f8f5f0);
-    }
-    .column-view{
-        display: flex;
-        flex-direction: column;
-    }
-    .main-photo{
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    .text-50{
-        font-size: 50px;
+    #main-text {
+        opacity: 0;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        font-size: 40px;
         font-weight: 900;
+        font-family: Arial, sans-serif;
+        color: black;
+        padding: 20px;
+        animation: fadeIn 2s forwards;
+    }
+
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50%) translateX(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
     }
 </style>

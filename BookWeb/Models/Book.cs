@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookWeb.Models
 {
@@ -9,15 +10,18 @@ namespace BookWeb.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string Author { get; set; }
-        [Required]
         public string Description { get; set; }
         [Required]
-        public DateOnly ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
-        [Required]
+        //Relationships
+        //Author
         public int AuthorId { get; set; }
-        [Required]
-        public string CategoryId { get; set; }
+        [ForeignKey("AuthorId")]
+        public Author Author { get; set; }
+        //Category
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
     }
 }
