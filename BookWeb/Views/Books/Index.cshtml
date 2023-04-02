@@ -5,7 +5,12 @@
         <partial name="_CategoriesPartial" , model="Model.Item1" />
     </div>
     <div class="d-flex flex-column">
-        <partial name="_BooksByCategoryPartial", model="Model.Item2" />
+        <h3>
+            @if (ViewBag.CategoryId != null)
+            {
+                <span>Selected Category: @Model.Item1.FirstOrDefault(c => c.Id == ViewBag.CategoryId)?.Name</span>
+            }
+        </h3>
+        <partial name="_BooksByCategoryPartial" , model="Model.Item2" />
     </div>
 </div>
-

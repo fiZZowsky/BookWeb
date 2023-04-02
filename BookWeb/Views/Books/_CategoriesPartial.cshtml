@@ -11,7 +11,7 @@
                 @foreach (var category in Model)
                 {
                     <li class="nav-item">
-                        <a class="nav-link @(ViewContext.RouteData.Values["Name"]?.ToString() == category.Name ? "active" : "")" href="@Url.Action("Index", new {Name = category.Name})">@category.Name</a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["categoryId"]?.ToString() == category.Id.ToString() ? "active" : "")" href="@Url.Action("Index", new {categoryId = category.Id})">@category.Name</a>
                     </li>
                 }
             </ul>
