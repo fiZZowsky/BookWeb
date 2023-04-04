@@ -575,3 +575,8 @@ C:\Users\Pioter\Desktop\BookWeb\BookWeb\obj\Debug\net7.0\refint\BookWeb.dll
 C:\Users\Pioter\Desktop\BookWeb\BookWeb\obj\Debug\net7.0\BookWeb.pdb
 C:\Users\Pioter\Desktop\BookWeb\BookWeb\obj\Debug\net7.0\BookWeb.genruntimeconfig.cache
 C:\Users\Pioter\Desktop\BookWeb\BookWeb\obj\Debug\net7.0\ref\BookWeb.dll
+C:\Users\Pioter\Desktop\BookWeb\BookWeb\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Pioter\Desktop\BookWeb\BookWeb\bin\Debug\net7.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Pioter\Desktop\BookWeb\BookWeb\bin\Debug\net7.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Pioter\Desktop\BookWeb\BookWeb\bin\Debug\net7.0\refs\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Pioter\Desktop\BookWeb\BookWeb\bin\Debug\net7.0\refs\Microsoft.Extensions.Identity.Stores.dll

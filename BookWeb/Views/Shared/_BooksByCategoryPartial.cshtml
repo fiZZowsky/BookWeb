@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Book>
+
+
+<div class="d-flex flex-row">
+    <div class="d-flex flex-column">
+        <h2>Content List</h2>
+        @foreach (var content in Model)
+        {
+            <div class="d-flex flex-row">
+                <div class="d-flex flex-column m-3">
+                    <img src="https://via.placeholder.com/100x150.png?text=Book+Cover" alt="Book Cover">
+                </div>
+                <div class="d-flex flex-column m-3">
+                    <h2>
+                        @content.Title
+                    </h2>
+                    <p>
+                        @content.Author.Name
+                        @content.Author.Surname
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="d-flex flex-column">
+        <label for="Title">Default sorting</label>
+        <select id="sortOrder" name="sortOrder" onchange="location = this.value;">
+            @*<option value="">Default sorting</option>
+            <option value="title_desc" selected="@((ViewBag.TitleSortParm == "title_desc") ? "selected" : null)">Title: Z-A</option>
+            <option value="title" selected="@((string)ViewBag.TitleSortParm == "title" ? "selected" : null)">Title: A-Z</option>
+            <option value="author" selected="@((string)ViewBag.AuthorSortParm == "author" ? "selected" : null)">Author: A-Z</option>
+            <option value="author_desc" selected="@((string)ViewBag.AuthorSortParm == "author_desc" ? "selected" : null)">Author: Z-A</option>
+            <option value="releaseDate" selected="@((string)ViewBag.ReleaseDateSortParm == "releaseDate" ? "selected" : null)">Release date: oldest first</option>
+            <option value="releaseDate_desc" selected="@((string)ViewBag.ReleaseDateSortParm == "releaseDate_desc" ? "selected" : null)">Release date: newest first</option>
+*@
+        </select>
+    </div>
+</div>

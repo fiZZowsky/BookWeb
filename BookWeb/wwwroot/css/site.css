@@ -20,3 +20,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-nav * {
+    margin-inline: 0.5rem;
+}
