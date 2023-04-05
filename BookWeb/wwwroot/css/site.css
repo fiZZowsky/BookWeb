@@ -18,14 +18,34 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #f1f1f1;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #729b79 !important;
 }
 
 .navbar-nav {
     display: flex;
     flex-direction: row;
+    font-weight: 700;
 }
 
-.navbar-nav * {
-    margin-inline: 0.5rem;
+    .navbar-nav * {
+        margin-inline: 0.5rem;
+        color: #575a5e !important;
+    }
+
+.active {
+    color: #000000 !important;
+    border-bottom: 0.17rem solid #000000;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -2,13 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="d-flex flex-wrap justify-content-center">
-    <div class="d-flex flex-row vh-100">
-        <div class="input-group align-items-center justify-content-center text-md-left flex-column" style="padding: 50px; flex-basis: 50%;">
-            <h1 style="font-weight:900" id="main-text">Find the book you're looking for easier to read.</h1>
+<div class="d-flex flex-wrap justify-content-center align-items-center">
+    <div class="d-flex flex-column flex-md-row">
+        <div class="d-flex flex-column flex-md-grow-1 align-items-center justify-content-center">
+            <div class="d-flex text-md-left text-center pt-5">
+                <h1 id="main-text">Find the book you're looking for easier to read.</h1>
+            </div>
         </div>
-        <div class="d-flex flex-wrap justify-content-center">
-            <img src="@Url.Content("~/Resources/hand-main.png")" />
+        <div class="d-flex flex-wrap justify-content-center ml-md-5 mt-5 mt-md-0">
+            <img class="mw-100 h-auto" src="@Url.Content("~/Resources/hand-main.png")" />
         </div>
     </div>
 </div>
@@ -19,10 +21,10 @@
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        font-size: 40px;
+        font-size: 2vw;
         font-weight: 900;
         font-family: Arial, sans-serif;
-        color: black;
+        color: #000000;
         padding: 20px;
         animation: fadeIn 2s forwards;
     }
@@ -36,6 +38,24 @@
         to {
             opacity: 1;
             transform: translateY(-50%) translateX(0);
+        }
+    }
+
+    @@media only screen and (max-width: 768px) {
+        #main-text {
+            font-size: 5vw;
+        }
+
+        .flex-column.flex-md-row {
+            flex-direction: column;
+        }
+
+        .ml-md-5 {
+            margin-left: 0 !important;
+        }
+
+        .mt-5.mt-md-0 {
+            margin-top: 20px !important;
         }
     }
 </style>

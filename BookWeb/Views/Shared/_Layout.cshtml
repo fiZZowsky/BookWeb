@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var action = ViewContext.RouteData.Values["Action"]?.ToString();
+    var controller = ViewContext.RouteData.Values["Controller"]?.ToString();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,28 +16,21 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white mb-3 py-2 px-2 ">
             <div class="container-fluid">
-                <div class="d-flex justify-content-start">
-                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">BookWeb</a>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                    <a class="nav-link text-dark" asp-controller="Books" asp-action="Index">Books</a>
-                    <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Help</a>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <form class="d-flex input-group w-auto">
-                        <input type="search"
-                               class="form-control rounded"
-                               placeholder="Search"
-                               aria-label="Search"
-                               aria-describedby="search-addon" />
-                        <span class="input-group-text border-0" id="search-addon">
-                            <i class="bi bi-search"></i>
-                        </span>
-                    </form>
-                    <partial name="_LoginPartial" class="d-flex flex-row"/>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bookweb</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item d-sm-flex flex-row">
+                            <a class="nav-link text-dark @(controller == "Books" ? "active font-weight-bold!required" : "")" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+                            <a class="nav-link text-dark @(controller == "Help" ? "active font-weight-bold!required" : "")" asp-area="" asp-controller="Home" asp-action="Index">Help</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>

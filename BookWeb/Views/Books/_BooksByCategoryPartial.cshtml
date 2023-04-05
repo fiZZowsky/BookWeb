@@ -3,6 +3,13 @@
 <h2>Content List</h2>
 
 <div>
+    <select name="sortOrder">
+        <option>Default</option>
+        <option>Title A-Z</option>
+        <option>Title Z-A</option>
+        <option>Author A-Z</option>
+        <option>Release Date</option>
+    </select>
     @foreach (var content in Model)
     {
         <div class="d-flex flex-row">
