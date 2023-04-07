@@ -1,5 +1,6 @@
 ﻿using BookWeb.Data;
 using BookWeb.Models;
+using BookWeb.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -52,5 +53,4 @@ public class BooksController : Controller
             return View(model);
         }
     }
-
 }

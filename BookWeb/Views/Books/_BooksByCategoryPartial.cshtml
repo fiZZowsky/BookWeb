@@ -5,7 +5,7 @@
         <div id="book-list">
             @foreach (var content in Model)
             {
-                <a asp-controller="BookDetails" asp-action="Index">
+                <a asp-controller="BookDetails" asp-action="Index" asp-route-bookId="@content.Id" class="text-decoration-none text-dark">
                     <div class="d-flex flex-row bg-white book-item mb-4" data-book-id="@content.Id">
                         <div class="d-flex flex-column m-3">
                             <img src="https://via.placeholder.com/100x150.png?text=Book+Cover" alt="Book Cover">
