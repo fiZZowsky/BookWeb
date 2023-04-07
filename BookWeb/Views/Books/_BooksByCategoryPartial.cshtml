@@ -1,30 +1,28 @@
 ﻿@model IEnumerable<Book>
 
-<h2>Content List</h2>
-
-<div>
-    <select name="sortOrder">
-        <option>Default</option>
-        <option>Title A-Z</option>
-        <option>Title Z-A</option>
-        <option>Author A-Z</option>
-        <option>Release Date</option>
-    </select>
-    @foreach (var content in Model)
-    {
-        <div class="d-flex flex-row">
-            <div class="d-flex flex-column m-3">
-                <img src="https://via.placeholder.com/100x150.png?text=Book+Cover" alt="Book Cover">
-            </div>
-            <div class="d-flex flex-column m-3">
-                <h2>
-                    @content.Title
-                </h2>
-                <p>
-                    @content.Author.Name
-                    @content.Author.Surname
-                </p>
-            </div>
+<div class="d-flex flex-row">
+    <div class="d-flex flex-column">
+        <div id="book-list">
+            @foreach (var content in Model)
+            {
+                <a asp-controller="BookDetails" asp-action="Index">
+                    <div class="d-flex flex-row bg-white book-item mb-4" data-book-id="@content.Id">
+                        <div class="d-flex flex-column m-3">
+                            <img src="https://via.placeholder.com/100x150.png?text=Book+Cover" alt="Book Cover">
+                        </div>
+                        <div class="d-flex flex-column m-3">
+                            <h2 class="">
+                                @content.Title
+                            </h2>
+                            <p>
+                                @content.Author.Name
+                                @content.Author.Surname
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            }
         </div>
-    }
+    </div>
 </div>
+

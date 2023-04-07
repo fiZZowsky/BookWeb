@@ -2,9 +2,6 @@
 using BookWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Reflection;
-using static System.Reflection.Metadata.BlobBuilder;
 
 public class BooksController : Controller
 {
@@ -15,52 +12,45 @@ public class BooksController : Controller
         _context = context;
     }
 
-    public IActionResult Index(int? categoryId)
+    public async Task<IActionResult> IndexAsync(int? categoryId, string sortOrder)
     {
-        var categories = _context.Categories.ToList();
-        var books = _context.Books.Include(b => b.Category).ToList();
-        var authors = _context.Authors.ToList();
+        var categories = await _context.Categories.ToListAsync();
+        var booksQuery = _context.Books.Include(b => b.Category).Include(b => b.Author).Where(b => !categoryId.HasValue || b.CategoryId == categoryId.Value);
 
-        if (categoryId.HasValue)
+        switch (sortOrder)
         {
-            books = books.Where(b => b.CategoryId == categoryId.Value).ToList();
+            case "Title A-Z":
+                booksQuery = booksQuery.OrderBy(b => b.Title);
+                break;
+            case "Title Z-A":
+                booksQuery = booksQuery.OrderByDescending(b => b.Title);
+                break;
+            case "Author A-Z":
+                booksQuery = booksQuery.OrderBy(b => b.Author.Name);
+                break;
+            case "Release Date":
+                booksQuery = booksQuery.OrderByDescending(b => b.ReleaseDate);
+                break;
+            default:
+                break;
         }
+
+        var books = await booksQuery.ToListAsync();
 
         var model = new Tuple<IEnumerable<Category>, IEnumerable<Book>>(categories, books);
 
-        return View(model);
+        ViewBag.TitleSortParm = sortOrder == "Title A-Z" ? "Title Z-A" : "Title A-Z";
+        ViewBag.AuthorSortParm = sortOrder == "Author A-Z" ? "Author Z-A" : "Author A-Z";
+        ViewBag.ReleaseDateSortParm = sortOrder == "Release Date" ? "Oldest" : "Release Date";
+
+        if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+        {
+            return PartialView("_BooksByCategoryPartial", books);
+        }
+        else
+        {
+            return View(model);
+        }
     }
 
-    //public IActionResult Index(int? categoryId, string sortOrder)
-    //{
-    //    var categories = _context.Categories.ToList();
-    //    var books = _context.Books.Include(b => b.Category).ToList();
-    //    var authors = _context.Authors.ToList();
-
-    //    if (categoryId.HasValue)
-    //    {
-    //        ViewBag.TitleSortParam = String.IsNullOrEmpty(sortOrder) ? "Title A-Z" : "";
-    //        ViewBag.AddDateSortParam = sortOrder == "releaseDate" ? "Release Date" : "";
-    //        switch (sortOrder)
-    //        {
-    //            case "Title A-Z":
-    //                books = books.OrderBy(b => b.Title).Where(b => b.CategoryId == categoryId.Value).ToList();
-    //                break;
-    //            case "Title Z-A":
-    //                books = books.OrderByDescending(b => b.Title).Where(b => b.CategoryId == categoryId.Value).ToList();
-    //                break;
-    //            case "Release Date":
-    //                books = books.OrderBy(b => b.ReleaseDate).Where(b => b.CategoryId == categoryId.Value).ToList();
-    //                break;
-    //            default:
-    //                books = books.OrderBy(b => b.Title).ToList();
-    //                break;
-    //        }
-
-
-    //        var model = new Tuple<IEnumerable<Category>, IEnumerable<Book>>(categories, books);
-
-    //        return View(model);
-    //    }
-    //}
 }

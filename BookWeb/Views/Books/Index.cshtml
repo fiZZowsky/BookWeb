@@ -11,6 +11,29 @@
                 <span>Selected Category: @Model.Item1.FirstOrDefault(c => c.Id == ViewBag.CategoryId)?.Name</span>
             }
         </h3>
+        <h2>Content List</h2>
+        <div class="d-flex flex-column ms-4 pb-4">
+            <label for="sortOrder">Sorting</label>
+            <select id="sortOrder" name="sortOrder">
+                <option value="Title A-Z" selected="@((string)ViewBag.sortOrder == "Title A-Z" ? "selected" : null)">Title A-Z</option>
+                <option value="Title Z-A" selected="@((string)ViewBag.sortOrder == "Title Z-A" ? "selected" : null)">Title Z-A</option>
+                <option value="Author A-Z" selected="@((string)ViewBag.sortOrder == "Author A-Z" ? "selected" : null)">Author A-Z</option>
+                <option value="Author Z-A" selected="@((string)ViewBag.sortOrder == "Author Z-A" ? "selected" : null)">Author Z-A</option>
+                <option value="Release Date" selected="@((string)ViewBag.sortOrder == "Release Date" ? "selected" : null)">Release Date</option>
+                <option value="Oldest" selected="@((string)ViewBag.sortOrder == "Oldest" ? "selected" : null)">Oldest</option>
+            </select>
+        </div>
         <partial name="_BooksByCategoryPartial" , model="Model.Item2" />
     </div>
 </div>
+
+<script>
+    $(function () {
+        $('#sortOrder').change(function () {
+            var url = '/Books/Index?categoryId=@ViewBag.categoryId&sortOrder=' + this.value;
+            $.get(url, function (data) {
+                $('#book-list').html(data);
+            });
+        });
+    });
+</script>
