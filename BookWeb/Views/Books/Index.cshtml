@@ -1,29 +1,38 @@
 ﻿@model Tuple<IEnumerable<Category>, IEnumerable<Book>>
 
-<div class="d-flex flex-row w-100 h-100 m-3 p-3">
-    <div class="d-flex flex-column me-5 pe-5">
-        <partial name="_CategoriesPartial" , model="Model.Item1" />
-    </div>
-    <div class="d-flex flex-column">
-        <h3>
-            @if (ViewBag.CategoryId != null)
-            {
-                <span>Selected Category: @Model.Item1.FirstOrDefault(c => c.Id == ViewBag.CategoryId)?.Name</span>
-            }
-        </h3>
-        <h2>Content List</h2>
-        <div class="d-flex flex-column ms-4 pb-4">
-            <label for="sortOrder">Sorting</label>
-            <select id="sortOrder" name="sortOrder">
-                <option value="Title A-Z" selected="@((string)ViewBag.sortOrder == "Title A-Z" ? "selected" : null)">Title A-Z</option>
-                <option value="Title Z-A" selected="@((string)ViewBag.sortOrder == "Title Z-A" ? "selected" : null)">Title Z-A</option>
-                <option value="Author A-Z" selected="@((string)ViewBag.sortOrder == "Author A-Z" ? "selected" : null)">Author A-Z</option>
-                <option value="Author Z-A" selected="@((string)ViewBag.sortOrder == "Author Z-A" ? "selected" : null)">Author Z-A</option>
-                <option value="Release Date" selected="@((string)ViewBag.sortOrder == "Release Date" ? "selected" : null)">Release Date</option>
-                <option value="Oldest" selected="@((string)ViewBag.sortOrder == "Oldest" ? "selected" : null)">Oldest</option>
-            </select>
+<div class="h-100 px-2">
+    <div class="d-flex flex-row h-100">
+        <div class="col-md-3 bg-light w-auto me-5">
+            <div class="sticky-top pt-3">
+                <partial name="_CategoriesPartial" , model="Model.Item1" />
+            </div>
         </div>
-        <partial name="_BooksByCategoryPartial" , model="Model.Item2" />
+        <div class="pt-3">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="mt-3 inputs">
+                    <form asp-controller="Books" asp-action="Index" method="get">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="searchString" />
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="d-flex flex-column col-md-3 me-4 pb-4">
+                    <label for="sortOrder">Sorting</label>
+                    <select id="sortOrder" name="sortOrder">
+                        <option value="Title A-Z" selected="@((string)ViewBag.sortOrder == "Title A-Z" ? "selected" : null)">Title A-Z</option>
+                        <option value="Title Z-A" selected="@((string)ViewBag.sortOrder == "Title Z-A" ? "selected" : null)">Title Z-A</option>
+                        <option value="Author A-Z" selected="@((string)ViewBag.sortOrder == "Author A-Z" ? "selected" : null)">Author A-Z</option>
+                        <option value="Author Z-A" selected="@((string)ViewBag.sortOrder == "Author Z-A" ? "selected" : null)">Author Z-A</option>
+                        <option value="Release Date" selected="@((string)ViewBag.sortOrder == "Release Date" ? "selected" : null)">Release Date</option>
+                        <option value="Oldest" selected="@((string)ViewBag.sortOrder == "Oldest" ? "selected" : null)">Oldest</option>
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap container-fluid" id="book-list">
+                <partial name="_BooksByCategoryPartial" , model="Model.Item2" />
+            </div>
+        </div>
     </div>
 </div>
 

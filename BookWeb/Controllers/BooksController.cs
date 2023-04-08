@@ -1,4 +1,5 @@
-﻿using BookWeb.Data;
+﻿using Azure.Core;
+using BookWeb.Data;
 using BookWeb.Models;
 using BookWeb.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -13,36 +14,43 @@ public class BooksController : Controller
         _context = context;
     }
 
-    public async Task<IActionResult> IndexAsync(int? categoryId, string sortOrder)
+    public async Task<IActionResult> IndexAsync(int? categoryId, string sortOrder, string searchString)
     {
         var categories = await _context.Categories.ToListAsync();
-        var booksQuery = _context.Books.Include(b => b.Category).Include(b => b.Author).Where(b => !categoryId.HasValue || b.CategoryId == categoryId.Value);
+        var books = _context.Books.Include(b => b.Category).Include(b => b.Author)
+            .Where(b => !categoryId.HasValue || b.CategoryId == categoryId.Value);
+
+        if (!String.IsNullOrEmpty(searchString))
+        {
+            books = books.Where(s => s.Title.Contains(searchString));
+        }
 
         switch (sortOrder)
         {
             case "Title A-Z":
-                booksQuery = booksQuery.OrderBy(b => b.Title);
+                books = books.OrderBy(b => b.Title);
                 break;
             case "Title Z-A":
-                booksQuery = booksQuery.OrderByDescending(b => b.Title);
+                books = books.OrderByDescending(b => b.Title);
                 break;
             case "Author A-Z":
-                booksQuery = booksQuery.OrderBy(b => b.Author.Name);
+                books = books.OrderBy(b => b.Author.Name);
                 break;
             case "Release Date":
-                booksQuery = booksQuery.OrderByDescending(b => b.ReleaseDate);
+                books = books.OrderByDescending(b => b.ReleaseDate);
                 break;
             default:
                 break;
         }
 
-        var books = await booksQuery.ToListAsync();
+        var booksO = await books.ToListAsync();
 
-        var model = new Tuple<IEnumerable<Category>, IEnumerable<Book>>(categories, books);
+        var model = new Tuple<IEnumerable<Category>, IEnumerable<Book>>(categories, booksO);
 
         ViewBag.TitleSortParm = sortOrder == "Title A-Z" ? "Title Z-A" : "Title A-Z";
         ViewBag.AuthorSortParm = sortOrder == "Author A-Z" ? "Author Z-A" : "Author A-Z";
         ViewBag.ReleaseDateSortParm = sortOrder == "Release Date" ? "Oldest" : "Release Date";
+        ViewBag.searchString = searchString;
 
         if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
         {
