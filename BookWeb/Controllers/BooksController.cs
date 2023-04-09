@@ -3,6 +3,8 @@ using BookWeb.Data;
 using BookWeb.Models;
 using BookWeb.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 
 public class BooksController : Controller

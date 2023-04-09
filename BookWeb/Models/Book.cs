@@ -13,6 +13,7 @@ namespace BookWeb.Models
         public string Description { get; set; }
         [Required]
         public DateTime ReleaseDate { get; set; }
+        public string CoverBookImg { get; set; }
 
         //Relationships
         //Author

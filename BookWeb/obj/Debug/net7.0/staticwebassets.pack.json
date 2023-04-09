@@ -5,6 +5,110 @@
       "PackagePath": "staticwebassets\\BookWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Carrie.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Carrie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Cztery_pory_roku.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Cztery_pory_roku.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Dziewczyna_z_pociagu.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Dziewczyna_z_pociagu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Gra_o_tron.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Gra_o_tron.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Gwiazd_naszych_wina.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Gwiazd_naszych_wina.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Harry_Potter_i_Czara_Ognia.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Harry_Potter_i_Czara_Ognia.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Harry_Potter_i_Kamien_Filozoficzny.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Harry_Potter_i_Kamien_Filozoficzny.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Hobbit_czyli_tam_i_z_powrotem.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Hobbit_czyli_tam_i_z_powrotem.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Igrzyska_smierci.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Igrzyska_smierci.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Kasacja.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Kasacja.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Kod_Leonarda_da_Vinci.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Kod_Leonarda_da_Vinci.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Krzyzacy.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Krzyzacy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Lalka.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Lalka.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Mezczyzni_ktorzy_nienawidza_kobiet.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Mezczyzni_ktorzy_nienawidza_kobiet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Miasteczko_Salem.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Miasteczko_Salem.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Mistrz_i_Malgorzata.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Mistrz_i_Malgorzata.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Ostatnie_zyczenie.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Ostatnie_zyczenie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Pan_Tadeusz.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Pan_Tadeusz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Pani_Jeziora.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Pani_Jeziora.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Przed_switem.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Przed_switem.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Rok_1984.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Rok_1984.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Smetarz_dla_zwierzakow.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Smetarz_dla_zwierzakow.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\To.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\To.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Zamek_z_piasku_ktory_runal.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Zamek_z_piasku_ktory_runal.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Zbrodnia_i_kara.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Zbrodnia_i_kara.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Zmierzch.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Zmierzch.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\hand-main.png",
       "PackagePath": "staticwebassets\\Resources\\hand-main.png"
     },
