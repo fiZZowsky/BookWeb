@@ -28,6 +28,18 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item d-sm-flex flex-row">
                             <a class="nav-link text-dark @(controller == "Books" ? "active font-weight-bold!required" : "")" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+                            @if (User?.Identity?.IsAuthenticated == true)
+                            {
+                                <div class="dropdown">
+                                    <button class="btn text-dark bg-white border-0 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        My BookWeb
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="nav-link text-dark" asp-controller="FavouriteBooksList" asp-action="Index">Favourites list</a>
+                                        <a class="nav-link text-dark" asp-controller="ToReadList" asp-action="Index">To read</a>
+                                    </div>
+                                </div>
+                            }
                             <a class="nav-link text-dark @(controller == "Help" ? "active font-weight-bold!required" : "")" asp-area="" asp-controller="Home" asp-action="Index">Help</a>
                         </li>
                     </ul>

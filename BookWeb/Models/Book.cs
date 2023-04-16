@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.CodeAnalysis.Elfie.Model.Tree;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookWeb.Models
@@ -14,8 +15,9 @@ namespace BookWeb.Models
         [Required]
         public DateTime ReleaseDate { get; set; }
         public string CoverBookImg { get; set; }
+        public int Rating { get; set; }
 
-        //Relationships
+        /*Relationships*/
         //Author
         public int AuthorId { get; set; }
         [ForeignKey("AuthorId")]
@@ -24,5 +26,22 @@ namespace BookWeb.Models
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
+        //Comment
+        public ICollection<Comment> Comments { get; set; }
+    
+        /*Rating system*/
+        public int RateCount
+        {
+            get { return ratings.Count; }
+        }
+        public int RateTotal
+        {
+            get
+            {
+                return (ratings.Sum(m => m.RateValue));
+            }
+        }
+
+        public virtual ICollection<BookRate> ratings { get; set; }  
     }
 }
