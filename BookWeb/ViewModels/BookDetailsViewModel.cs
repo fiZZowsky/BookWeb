@@ -1,4 +1,5 @@
 ﻿using BookWeb.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookWeb.ViewModels
 {
@@ -7,5 +8,6 @@ namespace BookWeb.ViewModels
         public Book? book { get; set; } = new Book();
         public Category? category { get; set; } = new Category();
         public Author? author { get; set; } = new Author();
+        public BookRate? bookRating { get; set; } = new BookRate();
     }
 }
