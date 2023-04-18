@@ -17,6 +17,7 @@ namespace BookWeb.Data
         public DbSet<BookRate> BookRates { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<UserFavoriteBook> UserFavorites { get; set; }
+        public DbSet<BooksToRead> BooksToReads { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

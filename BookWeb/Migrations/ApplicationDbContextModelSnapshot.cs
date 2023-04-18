@@ -111,6 +111,30 @@ namespace BookWeb.Migrations
                     b.ToTable("BookRates");
                 });
 
+            modelBuilder.Entity("BookWeb.Models.BooksToRead", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BooksToReads");
+                });
+
             modelBuilder.Entity("BookWeb.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -408,6 +432,25 @@ namespace BookWeb.Migrations
                 {
                     b.HasOne("BookWeb.Models.Book", "book")
                         .WithMany("ratings")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("book");
+                });
+
+            modelBuilder.Entity("BookWeb.Models.BooksToRead", b =>
+                {
+                    b.HasOne("BookWeb.Models.Book", "book")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

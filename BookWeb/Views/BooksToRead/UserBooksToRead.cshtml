@@ -1,0 +1,50 @@
+﻿@model List<BookWeb.ViewModels.BookDetailsViewModel>
+
+<div class="d-flex flex-column container-fluid bg-color pt-5 pb-5 px-4" id="book-list">
+    <div class="row">
+        <h2 class="pb-4">Your favorite books</h2>
+        @if (Model?.Count > 0)
+        {
+            @foreach (var content in Model)
+            {
+                <div class="col-md-4">
+                    <a asp-controller="BookDetails" asp-action="Index" asp-route-bookId="@content.book?.Id" class="text-decoration-none text-dark">
+                        <div class="card mb-4" style="width: 100%;">
+                            <div class="d-flex flex-row">
+                                <img class="card-img-top rounded-3" src="@Url.Content(content.book?.CoverBookImg)" alt="Book Cover" style="max-width: 200px; max-height: 250px;" />
+                                <div class="card-body d-flex flex-column ml-3 ps-4 rounded-3" style="background-color: #ffffff;">
+                                    <h5 class="card-title">@content.book?.Title</h5>
+                                    <p class="card-text">@content.book?.Author.Name @content.book?.Author.Surname</p>
+                                    <div>
+                                        <p>Rating</p>
+                                        @for (int i = 0; i < 5; i++)
+                                        {
+                                            if (i < content.book?.Rating)
+                                            {
+                                                <i class="bi bi-star-fill"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="bi bi-star"></i>
+                                            }
+                                        }
+                                    </div>
+                                    <div class="mt-4">
+                                        <form asp-controller="BooksToRead" asp-action="RemoveFromToReadList" method="post">
+                                            <input type="hidden" name="bookId" value="@content.book?.Id" />
+                                            <button type="submit" class="btn btn-danger">Remove from read list</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No favorite books yet.</p>
+        }
+    </div>
+</div>
