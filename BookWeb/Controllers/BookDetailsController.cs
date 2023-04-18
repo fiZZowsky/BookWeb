@@ -68,5 +68,31 @@ namespace BookWeb.Controllers
                 return Json("You must be logged in to rate this book.");
             }
         }
+
+        [HttpPost]
+        public JsonResult AddToFavorite(int bookId)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                // Sprawdzenie, czy użytkownik już ma dodaną tę książkę do swojej listy ulubionych
+                if (!_context.UserFavorites.Any(uf => uf.UserId == userID && uf.BookId == bookId))
+                {
+                    var userFavoriteBook = new UserFavoriteBook { UserId = userID, BookId = bookId };
+                    _context.UserFavorites.Add(userFavoriteBook);
+                    _context.SaveChanges();
+                    return Json("The book has been successfully added to your favorites list");
+                }
+                else
+                {
+                    return Json("This book is already on your favorites list");
+                }
+            }
+            else
+            {
+                return Json("You must be logged in to add a book to your favourites");
+            }
+        }
+
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Azure.Core;
 using BookWeb.Data;
 using BookWeb.Models;
-using BookWeb.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.CodeAnalysis;
@@ -47,7 +46,7 @@ public class BooksController : Controller
 
         var booksO = await books.ToListAsync();
 
-        var model = new Tuple<IEnumerable<Category>, IEnumerable<Book>>(categories, booksO);
+        var model = new Tuple<IEnumerable<Category>, IEnumerable<Book>>(categories, books);
 
         ViewBag.TitleSortParm = sortOrder == "Title A-Z" ? "Title Z-A" : "Title A-Z";
         ViewBag.AuthorSortParm = sortOrder == "Author A-Z" ? "Author Z-A" : "Author A-Z";

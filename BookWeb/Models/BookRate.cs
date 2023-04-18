@@ -16,7 +16,7 @@ namespace BookWeb.Models
         //User
         public string UserId { get; set; }
         [ForeignKey("UserId")]
-        public IdentityUser User { get; set; }
+        public virtual IdentityUser User { get; set; }
 
         //Book
         public int BookId { get; set; }
