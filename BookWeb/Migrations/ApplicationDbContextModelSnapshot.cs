@@ -160,7 +160,7 @@ namespace BookWeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BookId")
+                    b.Property<int>("BookId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
@@ -492,15 +492,19 @@ namespace BookWeb.Migrations
 
             modelBuilder.Entity("BookWeb.Models.Comment", b =>
                 {
-                    b.HasOne("BookWeb.Models.Book", null)
+                    b.HasOne("BookWeb.Models.Book", "Book")
                         .WithMany("Comments")
-                        .HasForeignKey("BookId");
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Book");
 
                     b.Navigation("User");
                 });

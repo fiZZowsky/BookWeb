@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Net;
+using System.Xml.Linq;
 
 namespace BookWeb.Controllers
 {
@@ -24,17 +25,20 @@ namespace BookWeb.Controllers
             var book = _context.Books.Include(b => b.Author).Include(b => b.Category).FirstOrDefault(b => b.Id == bookId);
             var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userRating = _context.BookRates.FirstOrDefault(b => b.Id == bookId && b.UserId == userID);
+            var comments = _context.Comments.Include(c => c.User).Where(c => c.BookId == bookId).ToList();
 
             var model = new BookDetailsViewModel
             {
                 book = book,
                 category = book.Category,
                 author = book.Author,
-                bookRating = userRating
+                bookRating = userRating,
+                comments = comments
             };
 
             return View(model);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> PostRating(int bid, int rating)
@@ -160,31 +164,71 @@ namespace BookWeb.Controllers
                     .Include(b => b.Comments)
                     .FirstOrDefaultAsync(b => b.Id == bookId);
 
-                if (book == null)
-                {
-                    return NotFound();
-                }
-
-                var user = await Task.Run(() => User.FindFirstValue(ClaimTypes.NameIdentifier));
+                var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 var comment = new Comment
                 {
                     Content = commentText,
                     PublishedDate = DateTime.UtcNow,
-                    UserId = user
+                    UserId = userID
                 };
 
                 book.Comments.Add(comment);
-
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index", new { id = bookId });
+                TempData["success"] = "Successfully added a comment";
+                return RedirectToAction("Index", new { bookId });
             }
             else
             {
-                TempData["error"] = "You must be logged in to add a comment.";
-                return RedirectToAction("Index", new { id = bookId });
+                TempData["error"] = "You must be logged in to add a comment";
+                return RedirectToAction("Index", new { bookId });
             }
+        }
+
+        public async Task<IActionResult> DeleteComment(int commentId, int bookId)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var comment = await _context.Comments.FindAsync(commentId);
+                if (comment != null && comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                {
+                    _context.Comments.Remove(comment);
+                    await _context.SaveChangesAsync();
+                    TempData["success"] = "Successfully deleted your comment";
+                }
+                else
+                {
+                    TempData["error"] = "You don't have permission to delete this comment";
+                }
+            }
+            else
+            {
+                TempData["error"] = "You must be logged in to delete your comment";
+            }
+            return RedirectToAction("Index", new { bookId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditComment(int commentId, string commentText)
+        {
+            var comment = await _context.Comments.FindAsync(commentId);
+
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (comment.UserId != userId)
+            {
+                return Forbid();
+            }
+
+            comment.Content = commentText;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", new { bookId = comment.BookId });
         }
     }
 }

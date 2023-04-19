@@ -1,4 +1,6 @@
 ﻿@model BookWeb.ViewModels.BookDetailsViewModel
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authentication
 
 <div class="container">
     <div class="d-flex flex-row">
@@ -56,7 +58,6 @@
                             <span class="bi bi-star stars" id="@i" bid="@Model.book.Id"></span>
                         }
                     }
-
                 </div>
                 <input type="hidden" id="bookId" value="@Model.book.Id" />
             </div>
@@ -86,6 +87,48 @@
         </div>
         <div>
             <p>@Model.book.Description</p>
+        </div>
+    </div>
+    <div class="d-flex flex-column">
+        <div>
+            <h2>Comments</h2>
+        </div>
+        <div>
+            <form method="post" action="@Url.Action("AddComment", "BookDetails")">
+                <input type="hidden" name="bookId" value="@Model.book.Id" />
+                <label for="exampleFormControlTextarea1">Enter your comment here</label>
+                <textarea class="form-control" name="commentText" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <button type="submit" class="btn btn-primary mt-4">Add comment</button>
+            </form>
+        </div>
+        <div class="mt-5">
+            @foreach (var c in Model.comments)
+            {
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">@c.User.UserName</h5>
+                        <div id="comment-@c.Id">
+                            <p class="card-text">@c.Content</p>
+                        </div>
+                        @if (User.Identity.IsAuthenticated && c.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                        {
+                            <div id="edit-form-@c.Id" style="display:none;">
+                                <form method="post" action="@Url.Action("EditComment", "BookDetails", new { commentId = c.Id })">
+                                    <input type="hidden" name="bookId" value="@Model.book.Id" />
+                                    <textarea class="form-control mb-2" name="commentText">@c.Content</textarea>
+                                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                    <button type="button" class="btn btn-secondary" onclick="cancelEdit(@c.Id)">Cancel</button>
+                                </form>
+                            </div>
+                            <button type="button" class="btn btn-primary edit-btn" onclick="editComment(@c.Id)">Edit</button>
+                            <form method="post" action="@Url.Action("DeleteComment", "BookDetails", new { commentId = c.Id })" class="d-inline delete-form">
+                                <input type="hidden" name="bookId" value="@Model.book.Id" />
+                                <button type="submit" class="btn btn-link text-danger">Delete</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>
@@ -130,4 +173,19 @@
             $(this).prevAll().removeClass("highlighted");
         });
     });
+
+    function editComment(commentId) {
+        $('#comment-' + commentId).hide();
+        $('#edit-form-' + commentId).show();
+        $('#edit-form-' + commentId + ' textarea').focus();
+        $('.edit-btn').hide();
+        $('.delete-form').hide();
+    }
+
+    function cancelEdit(commentId) {
+        $('#comment-' + commentId).show();
+        $('#edit-form-' + commentId).hide();
+        $('.edit-btn').show();
+        $('.delete-form').show();
+    }
 </script>
