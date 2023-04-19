@@ -1,11 +1,16 @@
-﻿using BookWeb.Data;
+﻿using System.Linq;
+using System.Security.Claims;
+using BookWeb.Data;
+using BookWeb.Models;
 using BookWeb.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 
 namespace BookWeb.Controllers
 {
+    [Authorize]
     public class BooksToReadController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,7 +23,7 @@ namespace BookWeb.Controllers
         public IActionResult UserBooksToRead()
         {
             var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userBookToRead = _context.BooksToReads
+            var userBooksToRead = _context.BooksToReads
                 .Include(ufb => ufb.book)
                     .ThenInclude(b => b.Author)
                 .Include(ufb => ufb.book)
@@ -28,7 +33,7 @@ namespace BookWeb.Controllers
                         .ThenInclude(r => r.User)
                 .Where(ufb => ufb.UserId == user);
 
-            var model = userBookToRead.Select(ufb => new BookDetailsViewModel
+            var model = userBooksToRead.Select(ufb => new BookDetailsViewModel
             {
                 book = ufb.book,
                 author = ufb.book.Author,
@@ -42,16 +47,17 @@ namespace BookWeb.Controllers
         public IActionResult RemoveFromToReadList(int bookId)
         {
             var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userBookToRead = _context.BooksToReads
+            var userBooksToRead = _context.BooksToReads
                 .FirstOrDefault(ufb => ufb.UserId == user && ufb.BookId == bookId);
 
-            if (userBookToRead != null)
+            if (userBooksToRead != null)
             {
-                _context.BooksToReads.Remove(userBookToRead);
+                _context.BooksToReads.Remove(userBooksToRead);
                 _context.SaveChanges();
             }
 
-            return RedirectToAction(nameof(UserBooksToRead));
+            return RedirectToAction("UserBooksToRead");
         }
+
     }
 }

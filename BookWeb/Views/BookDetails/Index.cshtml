@@ -42,12 +42,21 @@
             <div class="pt-4">
                 <p>Rate the book</p>
                 <div id="stars">
-                    @for (int i = 1; i <= 5; i++)
+                    @if (Model.bookRating != null)
                     {
-                        <span class="bi bi-star stars @if (i <= Model.bookRating.RateValue) {
-                                <text>filled-stars</text>
-                            }" id="@i" bid="@Model.book.Id"></span>
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <span class="bi bi-star stars @(i <= Model.bookRating.RateValue ? "filled-stars" : "")" id="@i" bid="@Model.book.Id"></span>
+                        }
                     }
+                    else
+                    {
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <span class="bi bi-star stars" id="@i" bid="@Model.book.Id"></span>
+                        }
+                    }
+
                 </div>
                 <input type="hidden" id="bookId" value="@Model.book.Id" />
             </div>
@@ -98,10 +107,12 @@
             $("#stars-count").text(count);
             stars.removeClass("filled-stars");
             $(this).prevAll().addBack().addClass("filled-stars");
-            var url = "/BookDetails/PostRating"; // zmieniono kontroler
-            var data = { rating: parseInt($(this).attr("id")), bid: parseInt($(this).attr("bid")) };
-            $.post(url, data, function (result) {
-                alert(result);
+            var url = "/BookDetails/PostRating";
+            var data = { bid: parseInt($(this).attr("bid")), rating: parseInt($(this).attr("id")) };
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: data
             });
         });
         stars.mouseover(function () {
