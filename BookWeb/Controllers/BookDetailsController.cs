@@ -125,6 +125,31 @@ namespace BookWeb.Controllers
             }
             return RedirectToAction("Index", new { bookId });
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> AddToReadedBooksList(int bookId)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (!_context.ReadedBooks.Any(uf => uf.UserId == userID && uf.BookId == bookId))
+                {
+                    var userReadedBook = new UserReadedBooks { UserId = userID, BookId = bookId };
+                    await _context.ReadedBooks.AddAsync(userReadedBook);
+                    await _context.SaveChangesAsync();
+                    TempData["success"] = "The book has been successfully added to your readed books list";
+                }
+                else
+                {
+                    TempData["error"] = "This book is already on your readed books list";
+                }
+            }
+            else
+            {
+                TempData["error"] = "You must be logged in to add a book to your readed books list";
+            }
+            return RedirectToAction("Index", new { bookId });
+        }
 
         [HttpPost]
         public async Task<IActionResult> AddComment(int bookId, string commentText)

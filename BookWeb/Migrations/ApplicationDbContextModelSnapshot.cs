@@ -207,6 +207,30 @@ namespace BookWeb.Migrations
                     b.ToTable("UserFavorites");
                 });
 
+            modelBuilder.Entity("BookWeb.Models.UserReadedBooks", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ReadedBooks");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -482,6 +506,25 @@ namespace BookWeb.Migrations
                 });
 
             modelBuilder.Entity("BookWeb.Models.UserFavoriteBook", b =>
+                {
+                    b.HasOne("BookWeb.Models.Book", "book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("book");
+                });
+
+            modelBuilder.Entity("BookWeb.Models.UserReadedBooks", b =>
                 {
                     b.HasOne("BookWeb.Models.Book", "book")
                         .WithMany()

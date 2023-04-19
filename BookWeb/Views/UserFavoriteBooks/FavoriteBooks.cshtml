@@ -8,7 +8,7 @@
             @foreach (var content in Model)
             {
                 <div class="col-md-4">
-                    <a asp-controller="BookDetails" asp-action="Index" asp-route-bookId="@content.book?.Id" class="text-decoration-none text-dark">
+                    <a asp-controller="UserFavoriteBooks" asp-action="FavoriteBooks" asp-route-bookId="@content.book?.Id" class="text-decoration-none text-dark">
                         <div class="card mb-4" style="width: 100%;">
                             <div class="d-flex flex-row">
                                 <img class="card-img-top rounded-3" src="@Url.Content(content.book?.CoverBookImg)" alt="Book Cover" style="max-width: 200px; max-height: 250px;" />
