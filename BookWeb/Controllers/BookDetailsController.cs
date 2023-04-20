@@ -119,16 +119,23 @@ namespace BookWeb.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (!_context.BooksToReads.Any(uf => uf.UserId == userID && uf.BookId == bookId))
+                if (!_context.ReadedBooks.Any(uf => uf.UserId == userID && uf.BookId == bookId))
                 {
-                    var userBookToRead = new BooksToRead { UserId = userID, BookId = bookId };
-                    await _context.BooksToReads.AddAsync(userBookToRead);
-                    await _context.SaveChangesAsync();
-                    TempData["success"] = "The book has been successfully added to your reading list";
+                    if (!_context.BooksToReads.Any(uf => uf.UserId == userID && uf.BookId == bookId))
+                    {
+                        var userBookToRead = new BooksToRead { UserId = userID, BookId = bookId };
+                        await _context.BooksToReads.AddAsync(userBookToRead);
+                        await _context.SaveChangesAsync();
+                        TempData["success"] = "The book has been successfully added to your reading list";
+                    }
+                    else
+                    {
+                        TempData["error"] = "This book is already on your reading list";
+                    }
                 }
                 else
                 {
-                    TempData["error"] = "This book is already on your reading list";
+                    TempData["error"] = "This book is already on your readed books list";
                 }
             }
             else
@@ -144,16 +151,23 @@ namespace BookWeb.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (!_context.ReadedBooks.Any(uf => uf.UserId == userID && uf.BookId == bookId))
+                if(!_context.BooksToReads.Any(uf => uf.UserId == userID && uf.BookId == bookId))
                 {
-                    var userReadedBook = new UserReadedBooks { UserId = userID, BookId = bookId };
-                    await _context.ReadedBooks.AddAsync(userReadedBook);
-                    await _context.SaveChangesAsync();
-                    TempData["success"] = "The book has been successfully added to your readed books list";
+                    if (!_context.ReadedBooks.Any(uf => uf.UserId == userID && uf.BookId == bookId))
+                    {
+                        var userReadedBook = new UserReadedBooks { UserId = userID, BookId = bookId };
+                        await _context.ReadedBooks.AddAsync(userReadedBook);
+                        await _context.SaveChangesAsync();
+                        TempData["success"] = "The book has been successfully added to your readed books list";
+                    }
+                    else
+                    {
+                        TempData["error"] = "This book is already on your readed books list";
+                    }
                 }
                 else
                 {
-                    TempData["error"] = "This book is already on your readed books list";
+                    TempData["error"] = "This book is already on your to read list";
                 }
             }
             else
@@ -235,6 +249,7 @@ namespace BookWeb.Controllers
 
             comment.Content = commentText;
             await _context.SaveChangesAsync();
+            TempData["success"] = "Successfully edited your comment";
 
             return RedirectToAction("Index", new { bookId = comment.BookId });
         }
