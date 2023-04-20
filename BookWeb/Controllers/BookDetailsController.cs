@@ -41,27 +41,27 @@ namespace BookWeb.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> PostRating(int bid, int rating)
+        public async Task<IActionResult> PostRating(int bookId, int rating)
         {
             if (User.Identity.IsAuthenticated)
             {
                 var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var bookRate = await _context.BookRates
-                    .FirstOrDefaultAsync(br => br.BookId == bid && br.UserId == userID);
+                    .FirstOrDefaultAsync(br => br.BookId == bookId && br.UserId == userID);
 
                 if (bookRate != null)
                 {
                     bookRate.RateValue = rating;
                     await _context.SaveChangesAsync();
 
-                    TempData["success"] = "Your rating for this book has been updated.";
+                    TempData["success"] = "Your rating for this book has been updated";
                 }
                 else
                 {
                     BookRate br = new BookRate
                     {
                         RateValue = rating,
-                        BookId = bid,
+                        BookId = bookId,
                         UserId = userID
                     };
 
@@ -70,13 +70,21 @@ namespace BookWeb.Controllers
 
                     TempData["success"] = "You rated this " + rating.ToString() + " star(s)";
                 }
+
+                // aktualizuj średnią ocenę ogólną książki
+                var book = await _context.Books.Include(b => b.ratings).FirstOrDefaultAsync(b => b.Id == bookId);
+                if (book != null)
+                {
+                    book.Rating = (int)Math.Round(((double)(book.RateTotal + rating) / (book.RateCount + 1)), MidpointRounding.AwayFromZero);
+                    await _context.SaveChangesAsync();
+                }
             }
             else
             {
                 TempData["error"] = "You must be logged in to rate this book.";
             }
 
-            return RedirectToAction("Index", new { bid });
+            return RedirectToAction("Index", new { bookId });
         }
 
         [HttpPost]
@@ -129,7 +137,7 @@ namespace BookWeb.Controllers
             }
             return RedirectToAction("Index", new { bookId });
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> AddToReadedBooksList(int bookId)
         {

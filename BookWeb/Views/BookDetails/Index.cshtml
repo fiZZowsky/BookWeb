@@ -44,20 +44,20 @@
             <div class="pt-4">
                 <p>Rate the book</p>
                 <div id="stars">
-                    @if (Model.bookRating != null)
-                    {
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            <span class="bi bi-star stars @(i <= Model.bookRating.RateValue ? "filled-stars" : "")" id="@i" bid="@Model.book.Id"></span>
-                        }
-                    }
-                    else
-                    {
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            <span class="bi bi-star stars" id="@i" bid="@Model.book.Id"></span>
-                        }
-                    }
+                @if (Model.bookRating != null)
+                {
+                @for (int i = 1; i <= 5; i++)
+                {
+                <span class="bi bi-star stars @(i <= Model.bookRating.RateValue ? "filled-stars" : "")" id="@i" bookId="@Model.book.Id"></span>
+                }
+                }
+                else
+                {
+                @for (int i = 1; i <= 5; i++)
+                {
+                <span class="bi bi-star stars" id="@i" bookId="@Model.book.Id"></span>
+                }
+                }
                 </div>
                 <input type="hidden" id="bookId" value="@Model.book.Id" />
             </div>
@@ -157,7 +157,7 @@
             stars.removeClass("filled-stars");
             $(this).prevAll().addBack().addClass("filled-stars");
             var url = "/BookDetails/PostRating";
-            var data = { bid: parseInt($(this).attr("bid")), rating: parseInt($(this).attr("id")) };
+            var data = { bookId: parseInt($(this).attr("bookId")), rating: parseInt($(this).attr("id")) };
             $.ajax({
                 type: "POST",
                 url: url,
