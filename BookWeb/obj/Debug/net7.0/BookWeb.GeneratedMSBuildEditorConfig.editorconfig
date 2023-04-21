@@ -52,8 +52,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Pioter/Desktop/BookWeb/BookWeb/Views/HelpSite/GetSupport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscFNpdGVcR2V0U3VwcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pioter/Desktop/BookWeb/BookWeb/Views/HelpSite/GettingStarted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscFNpdGVcR2V0dGluZ1N0YXJ0ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Pioter/Desktop/BookWeb/BookWeb/Views/HelpSite/HelpSiteView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscFNpdGVcSGVscFNpdGVWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pioter/Desktop/BookWeb/BookWeb/Views/HelpSite/Terms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscFNpdGVcVGVybXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pioter/Desktop/BookWeb/BookWeb/Views/Home/Index.cshtml]

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ugKnBphNXGUiasz9AYgUQ1jfmVTcEBA9OKOZbCSn+8k=",
+  "Hash": "xlhFiCH3odbDwvHnJNNMNVIxMpqHm93y7Kl5HAkLKsc=",
   "Source": "BookWeb",
   "BasePath": "_content/BookWeb",
   "Mode": "Default",
@@ -2548,6 +2548,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Resources\\hand-main.png"
+    },
+    {
+      "Identity": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\reading-in-the-meadow.jpg",
+      "SourceId": "BookWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\",
+      "BasePath": "_content/BookWeb",
+      "RelativePath": "Resources/reading-in-the-meadow.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\reading-in-the-meadow.jpg"
     }
   ]
 }

@@ -1,0 +1,189 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div id="navbar" class="col-md-3 bg-white text-light vh-100 pt-5 sticky-top">
+            <div class="border-bottom border-dark">
+                <a asp-controller="HelpSite" asp-action="HelpSiteView" class="text-decoration-none text-dark">
+                    <p class="lead fw-bold col">
+                        <i class="bi bi-chevron-left"></i> Go back to Help Center
+                    </p>
+                </a>
+            </div>
+            <div class="nav flex-column nav-pills pt-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-bookweb-info-tab" data-toggle="pill" href="#v-pills-bookweb-info" role="tab" aria-controls="v-pills-bookweb-info" aria-selected="true">What is BookWeb?</a>
+                <a class="nav-link" id="v-pills-features-tab" data-toggle="pill" href="#v-pills-features" role="tab" aria-controls="v-pills-features" aria-selected="false">Features</a>
+                <a class="nav-link" id="v-pills-contact-tab" data-toggle="pill" href="#v-pills-contact" role="tab" aria-controls="v-pills-contact" aria-selected="false">Contact Us</a>
+            </div>
+        </div>
+        <div class="col-md-9 pt-4 bg-light">
+            <div class="tab-content pt-4" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-bookweb-info" role="tabpanel" aria-labelledby="v-pills-bookweb-info-tab">
+                    <div id="bookweb-info" class="content-section">
+                        <div>
+                            <h1 class="border-bottom lead display-5 font-weight-bold">What is BookWeb?</h1>
+                        </div>
+                        <div class="pt-3">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h2 class="pt-5">Hey there 👋</h2>
+                                    <p>
+                                        BookWeb is an online platform for book lovers to discover new books, connect with other readers and share their reading 
+                                        experiences. With us, you can keep a list of your favorite books in one place. You will never forget the titles of the 
+                                        books you have read or those you want to read. You can also search for new titles that interest you.
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="img img-fluid w-100 h-auto" src="@Url.Content("~/Resources/reading-in-the-meadow.jpg")" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-features" role="tabpanel" aria-labelledby="v-pills-features-tab">
+                    <div id="features" class="content-section">
+                        <h2 class="mb-4">Features</h2>
+                        <div>
+                            <div>
+                                <h5 class="py-3 border-top border-bottom">Book discovery</h5>
+                                <div class="card-body">
+                                    Our application allows you to search for books according to your needs.
+                                    You can do this by clicking on the tab located in the navigation bar at the top of the page
+                                    in the "Books" tab. You will be redirected to the page with all books. Here you can select the
+                                    category you are interested in or simply search for the title of the book. You can also sort books
+                                    by selected criteria. Each book field contains information such as title, author, publication date,
+                                    and rating. After clicking on the book you are interested in, you will be redirected to its detailed information.
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="py-3 border-top border-bottom">Rating books</h5>
+                                <div class="card-body">
+                                    It is very simple. Just select the "Books" tab from the navigation bar at the top of the page, and then search for the book
+                                    you are interested in. After clicking on it, a page with detailed information about it will be displayed. On its right side
+                                    you will find the inscription "Rate the book" with stars under it. The rating corresponds to the marked number of stars. If
+                                    everything is successful, you will be informed by a pop-up message. You can change your rating at any time by re-entering
+                                    the details of the book.
+                                    <p class="text-danger pt-2">
+                                        Attention!
+                                    </p>
+                                    <p><ins>You must be logged in to rate a book.</ins></p>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="py-3 border-top border-bottom">Book lists</h5>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            Our service allows you to add books to lists. These are in turn:
+                                            <ul>
+                                                <li>list of books to read,</li>
+                                                <li> list of books read,</li>
+                                                <li>list of favorite books.</li>
+                                            </ul>
+                                        </li>
+                                        <li class="pt-2">
+                                            To add them to one of the lists, just go to the "Books" tab in the navigation bar at the top of the page. 
+                                            Then select the book you are interested in from the list and enter its details. On the right, under the book 
+                                            ratings, there are 3 buttons that allow you to add a book to the selected list. To view one of the lists, 
+                                            simply select "My BookWeb" from the navigation bar. After clicking on this button, the available options will 
+                                            expand, among which will be one of the lists you are looking for. Now just click on it and you will be redirected 
+                                            to the list view. The books you added will be there. You can remove them from the list at any time by pressing 
+                                            the "Remove from list" button in the field of the book you want to remove.
+                                        </li>
+                                        <li class="text-danger pt-2">Attention!</li>
+                                        <li><ins>You must be logged in to use the lists.</ins></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="py-3 border-top border-bottom">Sharing opinions</h5>
+                                <div class="card-body">
+                                    If you want to share your opinion about a book, you can do it in a very simple way. Go to the "Books" tab at the top
+                                    of the page. Then select the book you are interested in from the list and click on its field. You will be redirected to
+                                    the book details page. At the bottom of the page, under her description, there is a comment section where you can share your
+                                    opinion with others. At any time, you can also edit an already added opinion or delete it by pressing the selected button 
+                                    on your comment.
+                                    <p class="text-danger pt-2">
+                                        Attention!
+                                    </p>
+                                    <p><ins>You must be logged in to add, edit or delete comments.</ins></p>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="py-3 border-top border-bottom">Editing profile</h5>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            To edit your details, go to the "Hello 'email'!" tab. You will then be redirected to your profile page. 
+                                            In this place on the left you will find tabs thanks to which you can edit data such as:
+                                            <ul>
+                                                <li>Phone number,</li>
+                                                <li>e-mail,</li>
+                                                <li>password,</li>
+                                                <li>enable two-factor authentication.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            You can also download your data from the server by selecting the "Personal data" tab and then the 
+                                            "Download" button. You should see a window with the option to choose where you want to save the data file. 
+                                            This is a .json file. You can also save the file as .txt by changing the extension in the pop-up window and 
+                                            selecting "All Files" from the list below.
+                                        </li>
+                                        <li class="text-danger pt-2">Attention!</li>
+                                        <li><ins>You must be logged in to be able to perform the above operations.</ins></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="py-3 border-top border-bottom">Deleting account</h5>
+                                <div class="card-body">
+                                    To delete an account, select the "Hello 'email'!" tab. located in the navigation bar at the top of the screen. 
+                                    You will be redirected to the profile data editing page. Here, select the "Personal data" tab on the left. Now all 
+                                    you have to do is click on the "Delete" button.
+                                    <p class="text-danger pt-2">
+                                        Attention!
+                                    </p>
+                                    <p class="text-danger"><ins>Account deletion is irreversible. We will not be able to restore your account or data.</ins></p>
+                                    <p><ins>You must be logged in to be able to delete your account.</ins></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
+                    <div id="contact" class="content-section">
+                        <h2>Contact Us</h2>
+                        <p>You can reach us at:</p>
+                        <ul>
+                            <li>Email: info@bookweb.com</li>
+                            <li>Phone: +48-555-555-555</li>
+                            <li>Address: 123 Main St, Kielce Poland</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .active {
+        border-bottom: 0;
+    }
+</style>
+
+<script>
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            link.classList.add('active');
+
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            tabPanes.forEach(tabPane => tabPane.classList.remove('show', 'active'));
+
+            const targetPaneId = link.getAttribute('href');
+            const targetPane = document.querySelector(targetPaneId);
+            targetPane.classList.add('show', 'active');
+        });
+    });
+</script>

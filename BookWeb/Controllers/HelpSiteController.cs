@@ -8,5 +8,20 @@ namespace BookWeb.Controllers
         {
             return View();
         }
+
+        public IActionResult GettingStarted()
+        {
+            return View();
+        }
+
+        public IActionResult GetSupport()
+        {
+            return View();
+        }
+
+        public IActionResult Terms()
+        {
+            return View();
+        }
     }
 }

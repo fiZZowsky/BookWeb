@@ -113,6 +113,10 @@
       "PackagePath": "staticwebassets\\Resources\\hand-main.png"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\reading-in-the-meadow.jpg",
+      "PackagePath": "staticwebassets\\Resources\\reading-in-the-meadow.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
