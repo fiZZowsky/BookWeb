@@ -2,8 +2,6 @@
 using BookWeb.Data;
 using BookWeb.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OutputCaching;
-using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 
 public class BooksController : Controller
@@ -37,8 +35,14 @@ public class BooksController : Controller
             case "Author A-Z":
                 books = books.OrderBy(b => b.Author.Name);
                 break;
+            case "Author Z-A":
+                books = books.OrderByDescending(b => b.Author.Name);
+                break;
             case "Release Date":
                 books = books.OrderByDescending(b => b.ReleaseDate);
+                break;
+            case "Oldest":
+                books = books.OrderBy(b => b.ReleaseDate);
                 break;
             default:
                 break;
@@ -52,6 +56,7 @@ public class BooksController : Controller
         ViewBag.AuthorSortParm = sortOrder == "Author A-Z" ? "Author Z-A" : "Author A-Z";
         ViewBag.ReleaseDateSortParm = sortOrder == "Release Date" ? "Oldest" : "Release Date";
         ViewBag.searchString = searchString;
+        ViewBag.categoryId = categoryId;
 
         if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
         {

@@ -5,16 +5,64 @@
       "PackagePath": "staticwebassets\\BookWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Akwarium.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Akwarium.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Autostopowicz.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Autostopowicz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Basnie_Braci_Grimm.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Basnie_Braci_Grimm.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Blekitna_kropka._Człowiek_i_jego_przyszlosc_w_kosmosie.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Blekitna_kropka._Człowiek_i_jego_przyszlosc_w_kosmosie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Byl_sobie_pies.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Byl_sobie_pies.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Carrie.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Carrie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Charlie_i_fabryka_czekolady.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Charlie_i_fabryka_czekolady.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Cien_wiatru.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Cien_wiatru.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Cztery_pory_roku.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Cztery_pory_roku.jpg"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Czysty_kod._Podręcznik_dobrego_programisty.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Czysty_kod._Podręcznik_dobrego_programisty.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Dziewczyna_z_pociagu.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Dziewczyna_z_pociagu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Dzuma.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Dzuma.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Filary_Ziemi.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Filary_Ziemi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Geopolityka_Nowego_Jedwabnego_Szlaku.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Geopolityka_Nowego_Jedwabnego_Szlaku.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Gottland.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Gottland.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Gra_o_tron.jpg",
@@ -33,12 +81,24 @@
       "PackagePath": "staticwebassets\\Resources\\books-img\\Harry_Potter_i_Kamien_Filozoficzny.jpg"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Henryk_Sienkiewicz.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Henryk_Sienkiewicz.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Hobbit_czyli_tam_i_z_powrotem.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Hobbit_czyli_tam_i_z_powrotem.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Igrzyska_smierci.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Igrzyska_smierci.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Kaczor_Donald.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Kaczor_Donald.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Kamienie_na_szaniec.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Kamienie_na_szaniec.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Kasacja.jpg",
@@ -49,12 +109,40 @@
       "PackagePath": "staticwebassets\\Resources\\books-img\\Kod_Leonarda_da_Vinci.jpg"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Kosmiczne_zachwyty.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Kosmiczne_zachwyty.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Krol.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Krol.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Krotka_historia_czasu._Od_Wielkiego_Wybuchu_do_czarnych_dziur.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Krotka_historia_czasu._Od_Wielkiego_Wybuchu_do_czarnych_dziur.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Krzyzacy.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Krzyzacy.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Lalka.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Lalka.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Latarnik.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Latarnik.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Lazurowe_Wybrzeze.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Lazurowe_Wybrzeze.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Listy_starego_diabla_do_mlodego.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Listy_starego_diabla_do_mlodego.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Maly_Ksiaze.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Maly_Ksiaze.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Mezczyzni_ktorzy_nienawidza_kobiet.jpg",
@@ -69,6 +157,26 @@
       "PackagePath": "staticwebassets\\Resources\\books-img\\Mistrz_i_Malgorzata.jpg"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Mleko_i_miod.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Mleko_i_miod.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Mroczny_sobowtor.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Mroczny_sobowtor.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Nemesis.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Nemesis.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Oczami_psa.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Oczami_psa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Oskar_i_pani_Roza.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Oskar_i_pani_Roza.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Ostatnie_zyczenie.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Ostatnie_zyczenie.jpg"
     },
@@ -81,12 +189,32 @@
       "PackagePath": "staticwebassets\\Resources\\books-img\\Pani_Jeziora.jpg"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Prawdziwa_Milosc.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Prawdziwa_Milosc.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Przed_switem.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Przed_switem.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Rok_1984.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Rok_1984.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Rysio_Snajper.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Rysio_Snajper.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Samotnosc_w_sieci.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Samotnosc_w_sieci.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Skalny_pielgrzym.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Skalny_pielgrzym.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Slownik_mitow_i_tradycji_kultury.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Slownik_mitow_i_tradycji_kultury.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Smetarz_dla_zwierzakow.jpg",
@@ -97,8 +225,28 @@
       "PackagePath": "staticwebassets\\Resources\\books-img\\To.jpg"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Tomek_na_Czarnym_Ladzie.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Tomek_na_Czarnym_Ladzie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Tworcze_zycie_we_dwoje.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Tworcze_zycie_we_dwoje.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Tworcze_zycie_we_dwojga.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Tworcze_zycie_we_dwojga.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Wlam_sie_do_mozgu.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Wlam_sie_do_mozgu.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Zamek_z_piasku_ktory_runal.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Zamek_z_piasku_ktory_runal.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Zanim_sie_pojawiles.jpg",
+      "PackagePath": "staticwebassets\\Resources\\books-img\\Zanim_sie_pojawiles.jpg"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Zbrodnia_i_kara.jpg",
