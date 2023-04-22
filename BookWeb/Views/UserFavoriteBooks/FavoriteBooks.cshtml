@@ -1,6 +1,6 @@
 ﻿@model List<BookWeb.ViewModels.BookDetailsViewModel>
 
-<div class="d-flex flex-column container-fluid bg-color pt-5 pb-5 px-4"">
+<div class="d-flex flex-column container-fluid bg-color pt-5 pb-5 px-4">
     <div class="row">
         <h2 class="pb-4">Your favorite books</h2>
         @if (Model?.Count > 0)
@@ -16,10 +16,10 @@
                                     <h5 class="card-title">@content.book?.Title</h5>
                                     <p class="card-text">@content.book?.Author.Name @content.book?.Author.Surname</p>
                                     <div>
-                                        <p>Your Rating</p>
+                                        <p>Rating</p>
                                         @for (int i = 0; i < 5; i++)
                                         {
-                                            if (i < content.bookRating?.RateValue)
+                                            if (i < content.book?.Rating)
                                             {
                                                 <i class="bi bi-star-fill"></i>
                                             }
@@ -30,9 +30,9 @@
                                         }
                                     </div>
                                     <div class="mt-4">
-                                        <form asp-controller="UserFavoriteBooks" asp-action="RemoveFromFavorites" method="post">
+                                        <form asp-controller="UserFavoriteBooks" asp-action="RemoveFromFavoritesList" method="post">
                                             <input type="hidden" name="bookId" value="@content.book?.Id" />
-                                            <button type="submit" class="btn btn-danger">Remove from favorites</button>
+                                            <button type="submit" class="btn btn-danger">Remove from favorites books list</button>
                                         </form>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
         }
         else
         {
-            <p>No favorite books yet.</p>
+            <p>No favorites books yet.</p>
         }
     </div>
 </div>

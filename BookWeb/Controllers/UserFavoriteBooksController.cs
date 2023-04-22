@@ -44,19 +44,20 @@ namespace BookWeb.Controllers
             return View(model);
         }
 
-        public IActionResult RemoveFromFavorites(int bookId)
+        public IActionResult RemoveFromFavoritesList(int bookId)
         {
             var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userFavBook = _context.UserFavorites
+            var userFavoriteBooks = _context.UserFavorites
                 .FirstOrDefault(ufb => ufb.UserId == user && ufb.BookId == bookId);
 
-            if (userFavBook != null)
+            if (userFavoriteBooks != null)
             {
-                _context.UserFavorites.Remove(userFavBook);
+                _context.UserFavorites.Remove(userFavoriteBooks);
                 _context.SaveChanges();
+                TempData["success"] = "The book was successfully removed from the list";
             }
 
-            return RedirectToAction(nameof(FavoriteBooks));
+            return RedirectToAction("FavoriteBooks");
         }
 
     }

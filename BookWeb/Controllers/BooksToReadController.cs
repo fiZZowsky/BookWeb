@@ -54,6 +54,7 @@ namespace BookWeb.Controllers
             {
                 _context.BooksToReads.Remove(userBooksToRead);
                 _context.SaveChanges();
+                TempData["success"] = "The book was successfully removed from the list";
             }
 
             return RedirectToAction("UserBooksToRead");

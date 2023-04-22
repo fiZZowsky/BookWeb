@@ -115,6 +115,7 @@ namespace BookWeb.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    TempData["success"] = "Successfully logged in";
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
@@ -129,6 +130,7 @@ namespace BookWeb.Areas.Identity.Pages.Account
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    TempData["error"] = "Incorrect login details";
                     return Page();
                 }
             }
