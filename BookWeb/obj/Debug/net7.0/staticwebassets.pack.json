@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\BookWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\BookWebLogo.png",
+      "PackagePath": "staticwebassets\\Resources\\BookWebLogo.png"
+    },
+    {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Akwarium.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Akwarium.jpg"
     },
@@ -255,6 +259,10 @@
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\books-img\\Zmierzch.jpg",
       "PackagePath": "staticwebassets\\Resources\\books-img\\Zmierzch.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\boy-reading.png",
+      "PackagePath": "staticwebassets\\Resources\\boy-reading.png"
     },
     {
       "Id": "C:\\Users\\Pioter\\Desktop\\BookWeb\\BookWeb\\wwwroot\\Resources\\hand-main.png",
