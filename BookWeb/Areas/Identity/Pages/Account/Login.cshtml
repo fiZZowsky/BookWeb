@@ -20,15 +20,21 @@
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
-                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" type="password" id="passwordInput" />
                         <label asp-for="Input.Password" class="form-label">Password</label>
                         <span asp-validation-for="Input.Password" class="text-danger"></span>
                     </div>
-                    <div class="checkbox mb-3">
-                        <label asp-for="Input.RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
+                    <div class="d-flex justify-content-between">
+                        <div class="flex-col form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="showPasswordCheckbox">
+                            <label class="form-check-label" for="showPasswordCheckbox">Show Password</label>
+                        </div>
+                        <div class="flex-col checkbox mb-3">
+                            <label asp-for="Input.RememberMe" class="form-label">
+                                <input class="form-check-input" asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
                     </div>
                     <div>
                         <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
@@ -56,3 +62,15 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+    <script>
+        $(document).ready(function () {
+            $('#showPasswordCheckbox').change(function () {
+                var passwordInput = $('#passwordInput');
+                if ($(this).is(':checked')) {
+                    passwordInput.attr('type', 'text');
+                } else {
+                    passwordInput.attr('type', 'password');
+                }
+            });
+        });
+    </script>
