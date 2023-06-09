@@ -2,28 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container vh-100">
-    <div class="row justify-content-center align-items-center h-100">
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
             <div class="row justify-content-center align-items-center">
-                <div class="d-flex text-md-left text-center pt-5">
+                <div class="text-center pt-5">
                     <h1 id="main-text">Dive deep into the world of books!</h1>
                 </div>
-                <div class="d-flex flex-wrap justify-content-center ml-md-5 mt-5 mt-md-0">
-                    <img class="img" src="@Url.Content("~/Resources/hand-main.png")" />
+                <div class="text-center">
+                    <img class="img-fluid" src="@Url.Content("~/Resources/hand-main.png")" />
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
 <style>
-    #main-text {
+        #main-text {
         opacity: 0;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
         font-size: 2vw;
         font-weight: 900;
         font-family: Arial, sans-serif;
@@ -49,20 +45,9 @@
             font-size: 5vw;
         }
 
-        .flex-column.flex-md-row {
-            flex-direction: column;
-        }
-
-        .ml-md-5 {
-            margin-left: 0 !important;
-        }
-
-        .mt-5.mt-md-0 {
-            margin-top: 20px !important;
-        }
-
-        .img {
+        .img-fluid {
             max-width: 100%;
+            height: auto;
         }
     }
 </style>

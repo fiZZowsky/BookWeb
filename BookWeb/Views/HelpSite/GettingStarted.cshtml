@@ -1,20 +1,34 @@
 ﻿<div class="container-fluid">
     <div class="row">
-        <div id="navbar" class="col-md-3 bg-white text-light vh-100 pt-5 sticky-top">
-            <div class="border-bottom border-dark">
-                <a asp-controller="HelpSite" asp-action="HelpSiteView" class="text-decoration-none text-dark">
-                    <p class="lead fw-bold col">
-                        <i class="bi bi-chevron-left"></i> Go back to Help Center
-                    </p>
-                </a>
+        <div class="col-2" id="navbar">
+            <div class="position-fixed mt-2">
+                <button class="btn btn-primary" id="toggleSidebar">
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
-            <div class="nav flex-column nav-pills pt-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-bookweb-info-tab" data-toggle="pill" href="#v-pills-bookweb-info" role="tab" aria-controls="v-pills-bookweb-info" aria-selected="true">What is BookWeb?</a>
-                <a class="nav-link" id="v-pills-features-tab" data-toggle="pill" href="#v-pills-features" role="tab" aria-controls="v-pills-features" aria-selected="false">Features</a>
-                <a class="nav-link" id="v-pills-contact-tab" data-toggle="pill" href="#v-pills-contact" role="tab" aria-controls="v-pills-contact" aria-selected="false">Contact Us</a>
+            <div class="sidebar" id="sidebar">
+                <div class="align-items-center">
+                    <div class="d-flex flex-row-reverse">
+                        <button class="border-0" id="closeSidebar">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <a asp-controller="HelpSite" asp-action="HelpSiteView" class="text-decoration-none text-dark">
+                            <p class="lead fw-bold col">
+                                <i class="bi bi-chevron-left"></i> Go back to Help Center
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav nav-pills" id="v-pills-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action nav-link active" id="v-pills-bookweb-info-tab" data-toggle="pill" href="#v-pills-bookweb-info" role="tab" aria-controls="v-pills-bookweb-info" aria-selected="true">What is BookWeb?</a>
+                    <a class="list-group-item list-group-item-action nav-link" id="v-pills-features-tab" data-toggle="pill" href="#v-pills-features" role="tab" aria-controls="v-pills-features" aria-selected="false">Features</a>
+                    <a class="list-group-item list-group-item-action nav-link" id="v-pills-contact-tab" data-toggle="pill" href="#v-pills-contact" role="tab" aria-controls="v-pills-contact" aria-selected="false">Contact Us</a>
+                </div>
             </div>
         </div>
-        <div class="col-md-9 pt-4 bg-light">
+        <div class="col-10">
             <div class="tab-content pt-4" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-bookweb-info" role="tabpanel" aria-labelledby="v-pills-bookweb-info-tab">
                     <div id="bookweb-info" class="content-section">
@@ -26,8 +40,8 @@
                                 <div class="col-md-8">
                                     <h2 class="pt-5">Hey there 👋</h2>
                                     <p>
-                                        BookWeb is an online platform for book lovers to discover new books, connect with other readers and share their reading 
-                                        experiences. With us, you can keep a list of your favorite books in one place. You will never forget the titles of the 
+                                        BookWeb is an online platform for book lovers to discover new books, connect with other readers and share their reading
+                                        experiences. With us, you can keep a list of your favorite books in one place. You will never forget the titles of the
                                         books you have read or those you want to read. You can also search for new titles that interest you.
                                     </p>
                                 </div>
@@ -80,12 +94,12 @@
                                             </ul>
                                         </li>
                                         <li class="pt-2">
-                                            To add them to one of the lists, just go to the "Books" tab in the navigation bar at the top of the page. 
-                                            Then select the book you are interested in from the list and enter its details. On the right, under the book 
-                                            ratings, there are 3 buttons that allow you to add a book to the selected list. To view one of the lists, 
-                                            simply select "My BookWeb" from the navigation bar. After clicking on this button, the available options will 
-                                            expand, among which will be one of the lists you are looking for. Now just click on it and you will be redirected 
-                                            to the list view. The books you added will be there. You can remove them from the list at any time by pressing 
+                                            To add them to one of the lists, just go to the "Books" tab in the navigation bar at the top of the page.
+                                            Then select the book you are interested in from the list and enter its details. On the right, under the book
+                                            ratings, there are 3 buttons that allow you to add a book to the selected list. To view one of the lists,
+                                            simply select "My BookWeb" from the navigation bar. After clicking on this button, the available options will
+                                            expand, among which will be one of the lists you are looking for. Now just click on it and you will be redirected
+                                            to the list view. The books you added will be there. You can remove them from the list at any time by pressing
                                             the "Remove from list" button in the field of the book you want to remove.
                                         </li>
                                         <li class="text-danger pt-2">Attention!</li>
@@ -99,7 +113,7 @@
                                     If you want to share your opinion about a book, you can do it in a very simple way. Go to the "Books" tab at the top
                                     of the page. Then select the book you are interested in from the list and click on its field. You will be redirected to
                                     the book details page. At the bottom of the page, under her description, there is a comment section where you can share your
-                                    opinion with others. At any time, you can also edit an already added opinion or delete it by pressing the selected button 
+                                    opinion with others. At any time, you can also edit an already added opinion or delete it by pressing the selected button
                                     on your comment.
                                     <p class="text-danger pt-2">
                                         Attention!
@@ -112,7 +126,7 @@
                                 <div class="card-body">
                                     <ul class="list-unstyled">
                                         <li>
-                                            To edit your details, go to the "Hello 'email'!" tab. You will then be redirected to your profile page. 
+                                            To edit your details, go to the "Hello 'email'!" tab. You will then be redirected to your profile page.
                                             In this place on the left you will find tabs thanks to which you can edit data such as:
                                             <ul>
                                                 <li>Phone number,</li>
@@ -122,9 +136,9 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            You can also download your data from the server by selecting the "Personal data" tab and then the 
-                                            "Download" button. You should see a window with the option to choose where you want to save the data file. 
-                                            This is a .json file. You can also save the file as .txt by changing the extension in the pop-up window and 
+                                            You can also download your data from the server by selecting the "Personal data" tab and then the
+                                            "Download" button. You should see a window with the option to choose where you want to save the data file.
+                                            This is a .json file. You can also save the file as .txt by changing the extension in the pop-up window and
                                             selecting "All Files" from the list below.
                                         </li>
                                         <li class="text-danger pt-2">Attention!</li>
@@ -135,8 +149,8 @@
                             <div>
                                 <h5 class="py-3 border-top border-bottom">Deleting account</h5>
                                 <div class="card-body">
-                                    To delete an account, select the "Hello 'email'!" tab. located in the navigation bar at the top of the screen. 
-                                    You will be redirected to the profile data editing page. Here, select the "Personal data" tab on the left. Now all 
+                                    To delete an account, select the "Hello 'email'!" tab. located in the navigation bar at the top of the screen.
+                                    You will be redirected to the profile data editing page. Here, select the "Personal data" tab on the left. Now all
                                     you have to do is click on the "Delete" button.
                                     <p class="text-danger pt-2">
                                         Attention!
@@ -163,14 +177,22 @@
         </div>
     </div>
 </div>
-<style>
-    .active {
-        border-bottom: 0;
-    }
-</style>
 
 <script>
+    var sidebar = document.getElementById('sidebar');
+    var toggleSidebar = document.getElementById('toggleSidebar');
+    var closeSidebar = document.getElementById('closeSidebar');
     const navLinks = document.querySelectorAll('.nav-link');
+
+    toggleSidebar.addEventListener('click', function () {
+        sidebar.classList.toggle('open');
+        toggleSidebar.classList.toggle('collapsed');
+    });
+
+    closeSidebar.addEventListener('click', function () {
+        sidebar.classList.remove('open');
+        toggleSidebar.classList.remove('collapsed');
+    });
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -187,3 +209,32 @@
         });
     });
 </script>
+
+<style>
+    .active {
+        border-bottom: 0;
+    }
+
+    .nav-link.active {
+        color: white !important;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: #f8f9fa;
+        overflow-y: auto;
+        transition: left 0.3s ease-in-out;
+    }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar.open .close-btn {
+            right: 0;
+            margin: 10px;
+        }
+</style>

@@ -5,13 +5,13 @@
     ViewData["Title"] = "Log in";
 }
 
-<div class="container vh-100 m-5 p-5">
+<div class="container vh-100 p-5">
     <div class="row">
         <div class="col-md-4">
             <section>
                 <form id="account" method="post">
                     <h2>Hey, hello 👋</h2>
-                    <h3>Enter the information you enetered while registering.</h3>
+                    <h3>Enter the information you entered while registering.</h3>
                     <hr />
                     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                     <div class="form-floating mb-3">
@@ -47,8 +47,8 @@
                 </form>
             </section>
         </div>
-        <div class="col-md-6 col-md-offset-2">
-            <img class="img h-auto" src="@Url.Content("~/Resources/boy-reading.png")" />
+        <div class="col-md-6 offset-md-2">
+            <img class="img-fluid max-width-100" src="@Url.Content("~/Resources/boy-reading.png")" />
         </div>
     </div>
 </div>

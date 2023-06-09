@@ -3,138 +3,142 @@
 @using Microsoft.AspNetCore.Authentication
 
 <div class="container">
-    <div class="d-flex flex-row">
-        <div class="d-flex flex-column">
-            <img class="mw-100 h-auto p-5" src="@Url.Content(@Model.book.CoverBookImg)" alt="Book Cover">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid p-5" src="@Url.Content(@Model.book.CoverBookImg)" alt="Book Cover">
         </div>
-        <div class="d-flex flex-column bg-white m-5 p-3 rounded-3">
-            <div class="d-flex flex-row">
-                <h1>@Model.book.Title</h1>
-            </div>
-            <div class="d-flex flex-row">
-                <div class="d-flex flex-column p-3">
-                    <h3>@Model.author.Name @Model.author.Surname</h3>
-                    <p>Published on: @Model.book.ReleaseDate.ToShortDateString()</p>
-                </div>
-            </div>
-            <div class="d-flex flex-row">
-                <div class="d-flex flex-column p-3">
-                    <p>Category:</p>
-                    <h4>@Model.category.Name</h4>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex flex-column bg-white m-5 p-3 rounded-3">
-            <div>
-                <p>Average Rating</p>
-            </div>
-            <div>
-                @for (int i = 0; i < 5; i++)
-                {
-                    if (i < Model.book.Rating)
-                    {
-                        <i class="bi bi-star-fill display-6"></i>
-                    }
-                    else
-                    {
-                        <i class="bi bi-star display-6"></i>
-                    }
-                }
-            </div>
-            <div class="pt-4">
-                <p>Rate the book</p>
-                <div id="stars">
-                    @if (Model.bookRating != null)
-                    {
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            <span class="bi bi-star stars @(i <= Model.bookRating.RateValue ? "filled-stars" : "")" id="@i" bookId="@Model.book.Id"></span>
-                        }
-                    }
-                    else
-                    {
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            <span class="bi bi-star stars" id="@i" bookId="@Model.book.Id"></span>
-                        }
-                    }
-                </div>
-                <input type="hidden" id="bookId" value="@Model.book.Id" />
-            </div>
-            <div class="d-flex flex-row pt-4">
-                <form method="post" action="@Url.Action("AddToFavorite", "BookDetails")">
-                    <input type="hidden" name="bookId" value="@Model.book.Id" />
-                    <button type="submit" class="btn btn-default btn-dark">
-                        Add to favorite
-                    </button>
-                </form>
-            </div>
-            <div class="d-flex flex-row pt-4">
-                <form method="post" action="@Url.Action("AddToReadList", "BookDetails")">
-                    <input type="hidden" name="bookId" value="@Model.book.Id" />
-                    <button type="submit" class="btn btn-default btn-dark">
-                        Add to read list
-                    </button>
-                </form>
-            </div>
-            <div class="d-flex flex-row pt-4">
-                <form method="post" action="@Url.Action("AddToReadedBooksList", "BookDetails")">
-                    <input type="hidden" name="bookId" value="@Model.book.Id" />
-                    <button type="submit" class="btn btn-default btn-dark">
-                        Add to readed books
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex flex-column">
-        <div>
-            <h2>Description:</h2>
-        </div>
-        <div>
-            <p>@Model.book.Description</p>
-        </div>
-    </div>
-    <div class="d-flex flex-column">
-        <div>
-            <h2>Comments</h2>
-        </div>
-        <div>
-            <form method="post" action="@Url.Action("AddComment", "BookDetails")">
-                <input type="hidden" name="bookId" value="@Model.book.Id" />
-                <label for="exampleFormControlTextarea1">Enter your comment here</label>
-                <textarea class="form-control" name="commentText" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button type="submit" class="btn btn-primary mt-4">Add comment</button>
-            </form>
-        </div>
-        <div class="mt-5">
-            @foreach (var c in Model.comments)
-            {
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">@c.User.UserName</h5>
-                        <div id="comment-@c.Id">
-                            <p class="card-text">@c.Content</p>
+        <div class="col-md-8">
+            <div class="bg-white m-5 p-3 rounded-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>@Model.book.Title</h1>
+                        <div class="d-flex flex-column">
+                            <h3>@Model.author.Name @Model.author.Surname</h3>
+                            <p>Published on: @Model.book.ReleaseDate.ToShortDateString()</p>
                         </div>
-                        @if (User.Identity.IsAuthenticated && c.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
-                        {
-                            <div id="edit-form-@c.Id" style="display:none;">
-                                <form method="post" action="@Url.Action("EditComment", "BookDetails", new { commentId = c.Id })">
-                                    <input type="hidden" name="bookId" value="@Model.book.Id" />
-                                    <textarea class="form-control mb-2" name="commentText">@c.Content</textarea>
-                                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                    <button type="button" class="btn btn-secondary" onclick="cancelEdit(@c.Id)">Cancel</button>
-                                </form>
+                        <div class="d-flex flex-column">
+                            <p>Category:</p>
+                            <h4>@Model.category.Name</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div>
+                            <p>Average Rating</p>
+                        </div>
+                        <div>
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                if (i < Model.book.Rating)
+                                {
+                                    <i class="bi bi-star-fill display-6"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-star display-6"></i>
+                                }
+                            }
+                        </div>
+                        <div class="pt-4">
+                            <p>Rate the book</p>
+                            <div id="stars">
+                                @if (Model.bookRating != null)
+                                {
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <span class="bi bi-star stars @(i <= Model.bookRating.RateValue ? "filled-stars" : "")" id="@i" bookId="@Model.book.Id"></span>
+                                    }
+                                }
+                                else
+                                {
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <span class="bi bi-star stars" id="@i" bookId="@Model.book.Id"></span>
+                                    }
+                                }
                             </div>
-                            <button type="button" class="btn btn-primary edit-btn" onclick="editComment(@c.Id)">Edit</button>
-                            <form method="post" action="@Url.Action("DeleteComment", "BookDetails", new { commentId = c.Id })" class="d-inline delete-form">
+                            <input type="hidden" id="bookId" value="@Model.book.Id" />
+                        </div>
+                        <div class="d-flex flex-row pt-4">
+                            <form method="post" action="@Url.Action("AddToFavorite", "BookDetails")">
                                 <input type="hidden" name="bookId" value="@Model.book.Id" />
-                                <button type="submit" class="btn btn-link text-danger">Delete</button>
+                                <button type="submit" class="btn btn-default btn-dark">
+                                    Add to favorite
+                                </button>
                             </form>
-                        }
+                        </div>
+                        <div class="d-flex flex-row pt-4">
+                            <form method="post" action="@Url.Action("AddToReadList", "BookDetails")">
+                                <input type="hidden" name="bookId" value="@Model.book.Id" />
+                                <button type="submit" class="btn btn-default btn-dark">
+                                    Add to read list
+                                </button>
+                            </form>
+                        </div>
+                        <div class="d-flex flex-row pt-4">
+                            <form method="post" action="@Url.Action("AddToReadedBooksList", "BookDetails")">
+                                <input type="hidden" name="bookId" value="@Model.book.Id" />
+                                <button type="submit" class="btn btn-default btn-dark">
+                                    Add to readed books
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            }
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h2>Description:</h2>
+            </div>
+            <div>
+                <p>@Model.book.Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h2>Comments</h2>
+            </div>
+            <div>
+                <form method="post" action="@Url.Action("AddComment", "BookDetails")">
+                    <input type="hidden" name="bookId" value="@Model.book.Id" />
+                    <label for="exampleFormControlTextarea1">Enter your comment here</label>
+                    <textarea class="form-control" name="commentText" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary mt-4">Add comment</button>
+                </form>
+            </div>
+            <div class="mt-5">
+                @foreach (var c in Model.comments)
+                {
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">@c.User.UserName</h5>
+                            <div id="comment-@c.Id">
+                                <p class="card-text">@c.Content</p>
+                            </div>
+                            @if (User.Identity.IsAuthenticated && c.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                            {
+                                <div id="edit-form-@c.Id" style="display:none;">
+                                    <form method="post" action="@Url.Action("EditComment", "BookDetails", new { commentId = c.Id })">
+                                        <input type="hidden" name="bookId" value="@Model.book.Id" />
+                                        <textarea class="form-control mb-2" name="commentText">@c.Content</textarea>
+                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                        <button type="button" class="btn btn-secondary" onclick="cancelEdit(@c.Id)">Cancel</button>
+                                    </form>
+                                </div>
+                                <button type="button" class="btn btn-primary edit-btn" onclick="editComment(@c.Id)">Edit</button>
+                                <form method="post" action="@Url.Action("DeleteComment", "BookDetails", new { commentId = c.Id })" class="d-inline delete-form">
+                                    <input type="hidden" name="bookId" value="@Model.book.Id" />
+                                    <button type="submit" class="btn btn-link text-danger">Delete</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>
